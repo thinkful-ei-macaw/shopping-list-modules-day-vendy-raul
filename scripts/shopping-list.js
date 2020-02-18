@@ -1,3 +1,4 @@
+import item from './item.js';
 import store from './store.js';
 
 
@@ -143,5 +144,3 @@ export default {
   bindEventListeners
 };
 
-console.log(store);
-console.log(foo);

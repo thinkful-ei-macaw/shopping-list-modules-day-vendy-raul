@@ -1,4 +1,4 @@
-
+import item from './item.js';
 
 
 const store = {
@@ -7,3 +7,4 @@ const store = {
 };
 
 export default store;
+
