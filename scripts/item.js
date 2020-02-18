@@ -1,16 +1,16 @@
-function validateName(name){
-  try {
+function validateName(name) {
+  if (name === '') {
     throw new TypeError('Name must not be blank');
-  } catch (e){
-    console.log(e.message);
   }
 
-};
 
-function create(name){
-  let item = {id: cuid(),name: name, checked: false };
+}
+
+function create(name) {
+  // eslint-disable-next-line no-undef
+  let item = { id: cuid(), name: name, checked: false };
   return item;
-};
+}
 
 export default {
   validateName,
