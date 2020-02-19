@@ -11,14 +11,11 @@ function findByID(id){
   return this.items.find(item => item.id === id);
 }
 
-
-
 function addItem(name){
 
   try{
     item.validateName(name);
-    item.create(name);
-    this.items.push(name);
+    this.items.push(item.create(name));
   } catch(e){
     console.log(e.message);
   }
@@ -40,7 +37,6 @@ function findAndUpdateName(id, newName){
 }
 
 function findAndDelete(id){
-  //let foundItem = findByID(id);
   //filter the item that is the id
   console.log(id);
   this.items = this.items.filter(item => id !== item.id);
