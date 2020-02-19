@@ -147,9 +147,27 @@ const bindEventListeners = function () {
   handleToggleFilterClick();
 };
 
+
+function runTest(){
+  store.addItem({id: 0, name: 'chocolate', checked: false});
+  store.addItem({id: 1, name: 'carrot', checked: false});
+  store.addItem({id: 2, name: 'cheese', checked: false});
+  let item = store.findByID(2);
+  console.log(item.id === 2);
+  store.findAndToggleChecked(2);
+  let toggleItem = store.findByID(2);
+  console.log((toggleItem.checked === true));
+  store.findAndUpdateName(2, 'brocolli');
+  console.log(store.findByID(2).name === 'brocolli');
+  store.findAndDelete(2);
+  console.log(!store.findByID(2));
+  console.log(store.findByID(2));
+  
+}
 // This object contains the only exposed methods from this module:
 export default {
   render,
   bindEventListeners
 };
 
+runTest();
